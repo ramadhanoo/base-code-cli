@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   ScrollView,
   StyleSheet,
+  Text,
   TouchableOpacity,
 } from 'react-native';
 import {useLogin} from './useLogin';
@@ -11,6 +12,8 @@ import {TypeFonts} from '@/types/common';
 import Input from '@/components/Input';
 import {Colors} from '@/constants/colors';
 import {Controller} from 'react-hook-form';
+import Config from 'react-native-config';
+import DeviceInfo from 'react-native-device-info';
 
 const Login = () => {
   const {action, state, form} = useLogin();
@@ -24,6 +27,8 @@ const Login = () => {
 
   return (
     <BaseScreen style={styles.container} edges={['top']}>
+      <Text>{Config.ENV}</Text>
+      <Text>{DeviceInfo.getBundleId()}</Text>
       <ScrollView
         bounces={false}
         style={{flex: 1}}

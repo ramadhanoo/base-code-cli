@@ -5678,6 +5678,16 @@ react-is@^19.0.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-19.1.0.tgz#805bce321546b7e14c084989c77022351bbdd11b"
   integrity sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==
 
+react-native-config@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/react-native-config/-/react-native-config-1.5.5.tgz#5977db58ff20b6fe9dd6fb28c815a9ba43d018d2"
+  integrity sha512-dGdLnBU0cd5xL5bF0ROTmHYbsstZnQKOEPfglvZi1vStvAjpld14X25K6mY3KGPTMWAzx6TbjKeq5dR+ILuMMA==
+
+react-native-device-info@^14.0.4:
+  version "14.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-14.0.4.tgz#56b24ace9ff29a66bdfc667209086421ed6cfdce"
+  integrity sha512-NX0wMAknSDBeFnEnSFQ8kkAcQrFHrG4Cl0mVjoD+0++iaKrOupiGpBXqs8xR0SeJyPC5zpdPl4h/SaBGly6UxA==
+
 react-native-image-picker@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-8.2.0.tgz#d8656fdd1a0f1ad262c9c129d4f75900b685e56e"
@@ -5687,6 +5697,11 @@ react-native-is-edge-to-edge@1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/react-native-is-edge-to-edge/-/react-native-is-edge-to-edge-1.1.7.tgz#28947688f9fafd584e73a4f935ea9603bd9b1939"
   integrity sha512-EH6i7E8epJGIcu7KpfXYXiV2JFIYITtq+rVS8uEb+92naMRBdxhTuS8Wn2Q7j9sqyO0B+Xbaaf9VdipIAmGW4w==
+
+react-native-permissions@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-permissions/-/react-native-permissions-5.3.0.tgz#987ec347d312306b4aeca548996a16f6f129992d"
+  integrity sha512-krDaImQ7J8tm7P+GqKmTIkojNqdO0E6v2x7TOlX/7rRc/zlpoqRXsN7210ecChcUmEOJEH6wzPcemYq+7AfZiw==
 
 react-native-reanimated@^3.17.4:
   version "3.17.4"

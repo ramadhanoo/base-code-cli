@@ -1,6 +1,7 @@
 export const PATHS = {
   AUTH_STACK: 'auth_stack',
   MAIN_STACK: 'main_stack',
-  LOGIN: "login",
-  HOME: "home",
+  LOGIN: 'login',
+  HOME: 'home',
+  REGISTER: 'register',
 } as const;

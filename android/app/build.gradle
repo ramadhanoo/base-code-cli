@@ -2,6 +2,15 @@ apply plugin: "com.android.application"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
 
+project.ext.envConfigFiles = [
+   productiondebug: ".env.production",
+   productionrelease: ".env.production",
+   developmentrelease: ".env.development",
+   developmentdebug: ".env.development",
+   stagingrelease: ".env.staging",
+   stagingdebug: ".env.staging"
+]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 /**
  * This is the configuration block to customize your React Native Android app.
  * By default you don't need to apply any configuration, just uncomment the lines you need.
@@ -78,6 +87,22 @@ android {
     compileSdk rootProject.ext.compileSdkVersion
 
     namespace "com.clireactnative"
+    flavorDimensions "default"
+    productFlavors {
+        production {
+            dimension "default"
+        }
+        staging {
+            dimension "default"
+            applicationIdSuffix "staging"
+            resValue "string", "build_config_package", "com.clireactnative"
+        }
+        development {
+            dimension "default"
+            applicationIdSuffix "development"
+            resValue "string", "build_config_package", "com.clireactnative"
+        }
+    }
     defaultConfig {
         applicationId "com.clireactnative"
         minSdkVersion rootProject.ext.minSdkVersion
