@@ -1,7 +1,6 @@
-/* eslint-disable react/react-in-jsx-scope */
 import Animated, {SlideInDown, SlideOutDown} from 'react-native-reanimated';
 import {Text, TextStyle, ViewStyle, useWindowDimensions} from 'react-native';
-import { Colors } from '../constants/colors';
+import {Colors} from '../constants/colors';
 
 type ToastProp = {
   title: string;
@@ -33,7 +32,10 @@ const ToastApp = ({title, type = 'info'}: ToastProp) => {
     toastStyle = {...toastStyle, ...{borderColor: '#22bb33'}};
   } else if (type === 'error') {
     textStyle = {color: '#fff', fontSize: 16};
-    toastStyle = {...toastStyle, ...{borderColor: Colors.danger, backgroundColor: Colors.danger}};
+    toastStyle = {
+      ...toastStyle,
+      ...{borderColor: Colors.danger, backgroundColor: Colors.danger},
+    };
   }
 
   return (

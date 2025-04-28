@@ -13,7 +13,7 @@ type CustomTextProps = TextProps & {
 const CustomText: React.FC<CustomTextProps> = ({
   type = TypeFonts.REGULAR,
   children,
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+   
   color = useTheme().colors.text,
   size = 12,
   ...props

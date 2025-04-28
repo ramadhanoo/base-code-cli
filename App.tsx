@@ -23,7 +23,6 @@ const App = () => {
     if (previousRouteName !== currentRouteName) {
       routeNameRef.current = currentRouteName as string;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // if you need

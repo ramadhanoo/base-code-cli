@@ -47,7 +47,25 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'cliReactNative' do
+#target 'cliReactNative' do
+abstract_target 'cliReactNativeBase' do
+  
+  target 'cliReactNative' do
+      # Pods for cliReactNative
+  end
+  
+  target 'cliReactNative dev' do
+      # Pods for cliReactNative dev
+  end
+  
+  target 'cliReactNative stag' do
+      # Pods for cliReactNative stag
+  end
+  
+  target 'cliReactNative prod' do
+      # Pods for cliReactNative prod
+  end
+  
   config = use_native_modules!
 
   use_react_native!(

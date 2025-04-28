@@ -25,7 +25,11 @@
     "android:prod-release": "react-native run-android --mode=productionrelease",
     "androidProductionReleaseBundle": "yarn clean && cd android && ./gradlew bundleProductionRelease && killall -9 java && open ./android/app/build/outputs/bundle/production/release",
     "androidProductionDebugAPK": "yarn clean && cd android && ./gradlew assembleProductionDebug && killall -9 java && open ./android/app/build/outputs/apk/production/debug",
-    "androidProductionReleaseAPK": "yarn clean && cd android && ./gradlew assembleProductionRelease && killall -9 java && open ./android/app/build/outputs/apk/production/release"
+    "androidProductionReleaseAPK": "yarn clean && cd android && ./gradlew assembleProductionRelease && killall -9 java && open ./android/app/build/outputs/apk/production/release",
+    "-------------------------": "-------------------",
+    "ios:dev": "react-native run-ios --mode=Debug --scheme \"cliReactNative dev\" --simulator='iPhone 15'",
+    "ios:stag": "react-native run-ios --mode=Debug --scheme \"cliReactNative stag\" --simulator='iPhone 15'",
+    "ios:prod": "react-native run-ios --mode=Debug --scheme \"cliReactNative prod\" --simulator='iPhone 15'"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

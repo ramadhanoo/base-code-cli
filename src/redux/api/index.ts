@@ -1,9 +1,9 @@
-import { fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { RootState } from "../reducers";
-import { AuthAPI } from "@/constants/ApiUrls";
-import { getStore, getUserToken } from "../store";
-import { clearState, setNewToken } from "../slices/AuthSlice";
-import { BASE_URL } from "@/constants/configs";
+import {fetchBaseQuery} from '@reduxjs/toolkit/query/react';
+import {RootState} from '../reducers';
+import {AuthAPI} from '@/constants/ApiUrls';
+import {getStore, getUserToken} from '../store';
+import {clearState, setNewToken} from '../slices/AuthSlice';
+import {BASE_URL} from '@/constants/configs';
 
 interface RefreshTokenResponse {
   accessToken: string;
@@ -12,10 +12,10 @@ interface RefreshTokenResponse {
 
 const baseQuery = fetchBaseQuery({
   baseUrl: BASE_URL,
-  prepareHeaders: (headers, { getState }) => {
+  prepareHeaders: (headers, {getState}) => {
     const token = (getState() as RootState).auth.user.userToken?.accessToken;
     if (token) {
-      headers.set("Authorization", `Bearer ${token}`);
+      headers.set('Authorization', `Bearer ${token}`);
     }
     return headers;
   },
@@ -25,7 +25,7 @@ const baseQuery = fetchBaseQuery({
 export const customBaseQuery: typeof baseQuery = async (
   args,
   api,
-  extraOptions
+  extraOptions,
 ) => {
   let result = await baseQuery(args, api, extraOptions);
 
@@ -35,14 +35,14 @@ export const customBaseQuery: typeof baseQuery = async (
     const refreshResult = await baseQuery(
       {
         url: AuthAPI.REFRESH_TOKEN,
-        method: "POST",
+        method: 'POST',
         body: {
           refreshToken: refreshToken,
           expiresInMins: 1,
         },
       },
       api,
-      extraOptions
+      extraOptions,
     );
     const refreshData = refreshResult.data as RefreshTokenResponse;
     if (refreshData) {
@@ -51,7 +51,7 @@ export const customBaseQuery: typeof baseQuery = async (
         setNewToken({
           accessToken: refreshData.accessToken,
           refreshToken: refreshData.refreshToken,
-        })
+        }),
       );
       // Ulangi request sebelumnya dengan token baru
       result = await baseQuery(args, api, extraOptions);

@@ -6,18 +6,15 @@ import {
 } from '@react-navigation/native';
 import {useCallback, useState} from 'react';
 import {clearState} from '@/redux/slices/AuthSlice';
-import {useSelector} from 'react-redux';
-import {RootState} from '@/redux/reducers';
 import {useGetUsersQuery} from '@/redux/api/users';
 
 export function useHome() {
   const navigation: NavigationProp<ParamListBase> = useNavigation();
-  const authState = useSelector((state: RootState) => state.auth);
+  // const authState = useSelector((state: RootState) => state.auth);
   const [isFetch, setIsFetch] = useState<string>();
   const {
     data: users,
     isLoading,
-    error,
   } = useGetUsersQuery(undefined, {
     skip: !isFetch,
   });

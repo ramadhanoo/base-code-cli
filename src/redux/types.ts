@@ -1,4 +1,4 @@
-import { TError } from "../network/types";
+import {TError} from '../network/types';
 
 export type AuthState = {
   loading: boolean;
