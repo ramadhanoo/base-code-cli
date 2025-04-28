@@ -5,7 +5,8 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 15'",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "start": "react-native start",
     "test": "jest",
     "ba": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
@@ -60,6 +61,7 @@
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
+    "@eslint/js": "^9.25.1",
     "@react-native-community/cli": "18.0.0",
     "@react-native-community/cli-platform-android": "18.0.0",
     "@react-native-community/cli-platform-ios": "18.0.0",
@@ -70,12 +72,21 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "@typescript-eslint/parser": "^8.31.0",
     "babel-plugin-module-resolver": "^5.0.2",
-    "eslint": "^8.19.0",
+    "eslint": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "jest": "^29.6.3",
-    "prettier": "2.8.8",
+    "prettier": "^3.5.3",
     "react-test-renderer": "19.0.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "typescript-eslint": "^8.31.0"
   },
   "engines": {
     "node": ">=18"

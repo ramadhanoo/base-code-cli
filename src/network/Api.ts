@@ -47,6 +47,7 @@ const createHttpInstance = (baseURL: string = DEFAULT_BASE_URL) => {
           }
         } catch (refreshError) {
           getStore().dispatch(clearState());
+          throw refreshError
         }
       }
 
