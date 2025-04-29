@@ -30,7 +30,8 @@
     "-------------------------": "-------------------",
     "ios:dev": "react-native run-ios --mode=Debug --scheme \"cliReactNative dev\" --simulator='iPhone 15'",
     "ios:stag": "react-native run-ios --mode=Debug --scheme \"cliReactNative stag\" --simulator='iPhone 15'",
-    "ios:prod": "react-native run-ios --mode=Debug --scheme \"cliReactNative prod\" --simulator='iPhone 15'"
+    "ios:prod": "react-native run-ios --mode=Debug --scheme \"cliReactNative prod\" --simulator='iPhone 15'",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
@@ -82,7 +83,9 @@
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
     "jest": "^29.6.3",
+    "pinst": "^3.0.0",
     "prettier": "^3.5.3",
     "react-test-renderer": "19.0.0",
     "typescript": "5.0.4",
