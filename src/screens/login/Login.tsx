@@ -25,7 +25,6 @@ const Login = () => {
     formState: {errors},
   } = form;
 
-  console.log('wkwkwkw');
   return (
     <BaseScreen style={styles.container} edges={['top']}>
       <Text>{Config.ENV}</Text>
