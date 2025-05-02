@@ -19,7 +19,7 @@ const createHttpInstance = (baseURL: string = DEFAULT_BASE_URL) => {
     timeout: 10000, //10 detik
   });
 
-  instance.interceptors.request.use(async config => {
+  instance.interceptors.request.use(async (config) => {
     const userToken = getUserToken();
     const token = userToken?.userToken?.accessToken;
     if (token) {
@@ -29,10 +29,10 @@ const createHttpInstance = (baseURL: string = DEFAULT_BASE_URL) => {
   });
 
   instance.interceptors.response.use(
-    async response => {
+    async (response) => {
       return response;
     },
-    async error => {
+    async (error) => {
       const originalRequest = error.config;
       // Jika token expired (401) dan bukan refresh-token request
       if (error.response?.status === 401 && !originalRequest._retry) {
@@ -47,7 +47,7 @@ const createHttpInstance = (baseURL: string = DEFAULT_BASE_URL) => {
           }
         } catch (refreshError) {
           getStore().dispatch(clearState());
-          throw refreshError
+          throw refreshError;
         }
       }
 
@@ -62,7 +62,9 @@ const refreshAccessToken = async (): Promise<string | null> => {
   try {
     const userToken = getUserToken();
     const refreshToken = userToken?.userToken?.refreshToken;
-    if (!refreshToken) {throw new Error('No refresh token available');}
+    if (!refreshToken) {
+      throw new Error('No refresh token available');
+    }
     const response = await axios.post<
       TResponse<{accessToken: string; refreshToken: string}>
     >(`${DEFAULT_BASE_URL}${AuthAPI.REFRESH_TOKEN}`, {

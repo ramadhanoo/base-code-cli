@@ -24,7 +24,7 @@ export default [
       'react-hooks/exhaustive-deps': 'warn',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-require-imports': 'off',
-      'no-useless-catch': 'warn',
+      'no-useless-catch': 'off',
       'no-case-declarations': 'warn',
     },
     settings: {
