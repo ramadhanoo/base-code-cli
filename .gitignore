@@ -67,6 +67,9 @@ yarn-error.log
 # testing
 /coverage
 
+# Android keystore
+android/app/*.keystore
+
 # Yarn
 .yarn/*
 !.yarn/patches
